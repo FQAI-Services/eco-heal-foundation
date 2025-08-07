@@ -30,7 +30,7 @@ mission_goals:
     description: "Connecting environmental action with civic responsibility"
     icon: "flag"
 
-donation_qr_code: "/qr-code.png"
+donation_qr_code: "qr-code.png"
 
 address: "#457, sector 45, Gurgaon - 122003 (Haryana)"
 phone: "+91-8130433701"
