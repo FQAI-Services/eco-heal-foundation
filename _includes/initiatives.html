@@ -1,0 +1,30 @@
+<section id="programs" class="py-20 bg-white fade-in">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl md:text-4xl font-bold text-center text-eco-dark mb-4">Featured Initiatives</h2>
+        <p class="text-xl text-gray-700 text-center mb-12 max-w-3xl mx-auto">Discover our impactful programs making
+            a
+            difference in communities</p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+            {% for initiative in site.initiatives %}
+            <div class="initiative-card bg-eco-light rounded-xl overflow-hidden shadow-lg">
+                <div class="h-64 bg-cover bg-center"
+                    style="background-image: url('{{ initiative.image }}')">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold text-eco-dark mb-3">{{ initiative.title }}</h3>
+                    <p class="text-gray-700 mb-4">{{ initiative.content | markdownify }}</p>
+                    <a href="#programs" class="text-eco-blue font-semibold hover:underline">Learn More →</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="text-center mt-12">
+            <a href="#programs"
+                class="bg-eco-green hover:bg-eco-dark text-white font-bold py-3 px-8 rounded-full transition">View
+                All
+                Programs</a>
+        </div>
+    </div>
+</section>

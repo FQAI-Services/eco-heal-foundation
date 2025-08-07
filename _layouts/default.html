@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% include head.html %}
+
+<body class="bg-eco-light">
+
+    {% include header.html %}
+
+    <main>
+        {% for section in page.sections %}
+            {% include {{ section }} %}
+        {% endfor %}
+    </main>
+
+    {% include footer.html %}
+
+    {% include scripts.html %}
+
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% include head.html %}
+
+<body class="bg-eco-light">
+
+    {% include header.html %}
+
+    <main>
+        <div class="container mx-auto px-4 py-20">
+            <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-2xl overflow-hidden">
+                <div class="md:flex">
+                    <div class="md:flex-shrink-0">
+                        <img class="h-48 w-full object-cover md:w-48" src="{{ page.image }}" alt="{{ page.title }}">
+                    </div>
+                    <div class="p-8">
+                        <div class="uppercase tracking-wide text-sm text-eco-green font-bold">{{ page.role }}</div>
+                        <h1 class="block mt-1 text-3xl leading-tight font-bold text-eco-dark">{{ page.title }}</h1>
+                        <p class="mt-2 text-gray-500">{{ page.tagline }}</p>
+                    </div>
+                </div>
+
+                <div class="px-8 py-6">
+                    <!-- About Section -->
+                    <div class="mb-8">
+                        <h2 class="text-2xl font-bold text-eco-dark mb-4 border-b-2 border-eco-green pb-2">About Me</h2>
+                        <div class="prose max-w-none text-gray-700">
+                            {{ content | markdownify }}
+                        </div>
+                    </div>
+
+                    <!-- Current Projects Section -->
+                    <div class="mb-8">
+                        <h2 class="text-2xl font-bold text-eco-dark mb-4 border-b-2 border-eco-green pb-2">Current Projects</h2>
+                        <ul class="list-disc list-inside space-y-2 text-gray-700">
+                            {% for project in page.projects %}
+                                <li><strong>{{ project.name }}:</strong> {{ project.description }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+
+                    <!-- Standings & Achievements Section -->
+                    <div>
+                        <h2 class="text-2xl font-bold text-eco-dark mb-4 border-b-2 border-eco-green pb-2">Standings & Achievements</h2>
+                        <ul class="list-disc list-inside space-y-2 text-gray-700">
+                            {% for achievement in page.achievements %}
+                                <li>{{ achievement }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    {% include footer.html %}
+
+    {% include scripts.html %}
+
+</body>
+
+</html>

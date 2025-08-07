@@ -1,0 +1,37 @@
+title: EcoHeal Foundation
+description: Green Planet, Responsible Generations
+url: "http://www.ecoheal.org.in/"
+baseurl: ""
+
+collections:
+  stories:
+    output: false
+  events:
+    output: false
+  initiatives:
+    output: false
+
+mission_statement: '"Building a greener planet and sustainable future by instilling civic responsibility and national pride through environmental and educational initiatives."'
+
+mission_goals:
+  - title: "Promoting Green Practices"
+    description: "Encouraging sustainable habits and eco-friendly solutions in communities"
+    icon: "recycle"
+  - title: "Championing Civic Cleanliness"
+    description: "Leading community clean-up initiatives and waste management programs"
+    icon: "hand-sparkles"
+  - title: "Enhancing Scenic Beauty"
+    description: "Restoring natural landscapes and urban green spaces"
+    icon: "tree"
+  - title: "Conducting Awareness Programs"
+    description: "Educating communities about environmental conservation"
+    icon: "chalkboard-teacher"
+  - title: "Fostering National Pride"
+    description: "Connecting environmental action with civic responsibility"
+    icon: "flag"
+
+donation_qr_code: "/qr-code.png"
+
+address: "#457, sector 45, Gurgaon - 122003 (Haryana)"
+phone: "+91-8130433701"
+email: "ecohealfoundation@gmail.com"

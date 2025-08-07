@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoHeal Foundation - Green Planet, Responsible Generations</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'eco-green': '#2E8B57',
+                        'eco-blue': '#1E90FF',
+                        'eco-light': '#F0FFF0',
+                        'eco-dark': '#1A3C27'
+                    },
+                    fontFamily: {
+                        poppins: ['Poppins', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .hero-bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1973&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .mission-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .initiative-card {
+            transition: all 0.3s ease;
+        }
+
+        .initiative-card:hover {
+            transform: scale(1.02);
+        }
+
+        .carousel-item {
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .leaf-pattern {
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%232e8b5722' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+    </style>
+    <link rel="icon" href="/logo.svg" type="image/svg+xml">
+</head>
+
+
+<body class="bg-eco-light">
+
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+        <div class="flex items-center">
+            <img src="/logo.svg" alt="EcoHeal Foundation Logo" class="h-12 mr-3">
+            <h1 class="text-2xl font-bold text-eco-dark">EcoHeal Foundation</h1>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex space-x-8">
+            <a href="/#home" class="text-eco-dark hover:text-eco-green transition">Home</a>
+            <a href="/#about" class="text-eco-dark hover:text-eco-green transition">About Us</a>
+            <a href="/#programs" class="text-eco-dark hover:text-eco-green transition">Programs</a>
+            <a href="/#donate" class="text-eco-dark hover:text-eco-green transition">Donate</a>
+            <a href="/#get-involved" class="text-eco-dark hover:text-eco-green transition">Get Involved</a>
+            <a href="/#stories" class="text-eco-dark hover:text-eco-green transition">Success Stories</a>
+            <a href="/#contact" class="text-eco-dark hover:text-eco-green transition">Contact</a>
+        </nav>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobile-menu-button" class="md:hidden text-eco-dark">
+            <i class="fas fa-bars text-2xl"></i>
+        </button>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white py-4 px-4">
+        <a href="/#home" class="block py-2 text-eco-dark hover:text-eco-green">Home</a>
+        <a href="/#about" class="block py-2 text-eco-dark hover:text-eco-green">About Us</a>
+        <a href="/#programs" class="block py-2 text-eco-dark hover:text-eco-green">Programs</a>
+        <a href="/#donate" class="block py-2 text-eco-dark hover:text-eco-green">Donate</a>
+        <a href="/#get-involved" class="block py-2 text-eco-dark hover:text-eco-green">Get Involved</a>
+        <a href="/#stories" class="block py-2 text-eco-dark hover:text-eco-green">Success Stories</a>
+        <a href="/#contact" class="block py-2 text-eco-dark hover:text-eco-green">Contact</a>
+    </div>
+</header>
+
+    <main>
+        
+            <section id="home" class="hero-bg min-h-[80vh] flex items-center justify-center text-center text-white fade-in">
+    <div class="container mx-auto px-4 py-20">
+        <h1 class="text-4xl md:text-6xl font-bold mb-6 animate-pulse">EcoHeal: Green Planet, Responsible Generations
+        </h1>
+        <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">Join us in creating a sustainable future through
+            environmental conservation and civic education</p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+            <a href="#get-involved"
+                class="bg-eco-green hover:bg-eco-dark text-white font-bold py-3 px-8 rounded-full transition transform hover:scale-105">Get
+                Involved</a>
+            <a href="#donate"
+                class="bg-eco-blue hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-full transition transform hover:scale-105">Donate
+                Now</a>
+        </div>
+    </div>
+</section>
+        
+            <section id="about" class="py-20 leaf-pattern fade-in">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-eco-dark mb-4">Our Mission</h2>
+            <p class="text-xl text-gray-700 max-w-3xl mx-auto">"Building a greener planet and sustainable future by instilling civic responsibility and national pride through environmental and educational initiatives."</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+            
+            <div class="mission-card bg-white rounded-xl shadow-lg p-6 text-center transition-all duration-300">
+                <div class="w-16 h-16 bg-eco-green rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-recycle text-white text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-eco-dark mb-2">Promoting Green Practices</h3>
+                <p class="text-gray-600">Encouraging sustainable habits and eco-friendly solutions in communities</p>
+            </div>
+            
+            <div class="mission-card bg-white rounded-xl shadow-lg p-6 text-center transition-all duration-300">
+                <div class="w-16 h-16 bg-eco-green rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-hand-sparkles text-white text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-eco-dark mb-2">Championing Civic Cleanliness</h3>
+                <p class="text-gray-600">Leading community clean-up initiatives and waste management programs</p>
+            </div>
+            
+            <div class="mission-card bg-white rounded-xl shadow-lg p-6 text-center transition-all duration-300">
+                <div class="w-16 h-16 bg-eco-green rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-tree text-white text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-eco-dark mb-2">Enhancing Scenic Beauty</h3>
+                <p class="text-gray-600">Restoring natural landscapes and urban green spaces</p>
+            </div>
+            
+            <div class="mission-card bg-white rounded-xl shadow-lg p-6 text-center transition-all duration-300">
+                <div class="w-16 h-16 bg-eco-green rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-chalkboard-teacher text-white text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-eco-dark mb-2">Conducting Awareness Programs</h3>
+                <p class="text-gray-600">Educating communities about environmental conservation</p>
+            </div>
+            
+            <div class="mission-card bg-white rounded-xl shadow-lg p-6 text-center transition-all duration-300">
+                <div class="w-16 h-16 bg-eco-green rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-flag text-white text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-eco-dark mb-2">Fostering National Pride</h3>
+                <p class="text-gray-600">Connecting environmental action with civic responsibility</p>
+            </div>
+            
+        </div>
+    </div>
+</section>
+        
+            <section id="programs" class="py-20 bg-white fade-in">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl md:text-4xl font-bold text-center text-eco-dark mb-4">Featured Initiatives</h2>
+        <p class="text-xl text-gray-700 text-center mb-12 max-w-3xl mx-auto">Discover our impactful programs making
+            a
+            difference in communities</p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+            
+            <div class="initiative-card bg-eco-light rounded-xl overflow-hidden shadow-lg">
+                <div class="h-64 bg-cover bg-center"
+                    style="background-image: url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b61?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80')">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold text-eco-dark mb-3">Green Schools Program</h3>
+                    <p class="text-gray-700 mb-4"><p>Empowering the next generation with environmental education and sustainable practices. Our program reaches over 200 schools nationwide.</p>
+</p>
+                    <a href="#programs" class="text-eco-blue font-semibold hover:underline">Learn More →</a>
+                </div>
+            </div>
+            
+            <div class="initiative-card bg-eco-light rounded-xl overflow-hidden shadow-lg">
+                <div class="h-64 bg-cover bg-center"
+                    style="background-image: url('https://images.unsplash.com/photo-1601924994987-69e26d50dc26?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold text-eco-dark mb-3">Community Clean-Up Drives</h3>
+                    <p class="text-gray-700 mb-4"><p>Mobilizing communities to restore public spaces. We’ve removed over 50 tons of waste and planted 10,000 trees in urban areas.</p>
+</p>
+                    <a href="#programs" class="text-eco-blue font-semibold hover:underline">Learn More →</a>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="text-center mt-12">
+            <a href="#programs"
+                class="bg-eco-green hover:bg-eco-dark text-white font-bold py-3 px-8 rounded-full transition">View
+                All
+                Programs</a>
+        </div>
+    </div>
+</section>
+        
+            <section id="donate" class="py-20 bg-gradient-to-r from-eco-green to-eco-blue text-white fade-in">
+    <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Support Our Mission</h2>
+            <p class="text-xl mb-8">Your contribution helps us create a greener planet and educate responsible
+                generations
+            </p>
+
+            <div class="flex flex-col md:flex-row items-center justify-center gap-10">
+                <div class="bg-white p-6 rounded-xl shadow-lg">
+                    <img src="/qr-code.png" alt="Donate QR Code" class="w-48 h-48">
+                </div>
+
+                <div class="text-left">
+                    <h3 class="text-2xl font-bold mb-4">Make a Difference Today</h3>
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle mt-1 mr-2"></i>
+                            <span>$25 plants 5 trees in deforested areas</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle mt-1 mr-2"></i>u
+                            <span>$50 educates a child for one year</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle mt-1 mr-2"></i>
+                            <span>$100 sponsors a community clean-up</span>
+                        </li>
+                    </ul>
+                    <a href="#"
+                        class="bg-white text-eco-green font-bold py-3 px-8 rounded-full inline-block hover:bg-gray-100 transition transform hover:scale-105">Donate
+                        Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+        
+            <section id="team" class="py-20 bg-white fade-in">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl md:text-4xl font-bold text-center text-eco-dark mb-4">Meet Our Team</h2>
+        <p class="text-xl text-gray-700 text-center mb-12 max-w-3xl mx-auto">The dedicated individuals leading EcoHeal's mission</p>
+
+        <div class="flex flex-wrap justify-center gap-8">
+            
+                
+                    <div class="bg-eco-light rounded-xl shadow-lg p-8 flex flex-col items-center">
+                        <div class="w-32 h-32 rounded-full overflow-hidden mb-4">
+                            <img src="/person.png" alt="Capt. Yograj Aggarwal" class="w-full h-full object-cover">
+                        </div>
+                        <h4 class="text-xl font-bold text-eco-dark">Capt. Yograj Aggarwal</h4>
+                        <p class="text-eco-green mb-4">Executive Director</p>
+                        <p class="text-gray-700 text-center mb-6">
+                            Leading the charge for a sustainable future, one community at a time.
+                        </p>
+                        <a href="/profiles/capt-yograj-aggarwal.html" class="bg-eco-green text-white px-6 py-2 rounded-full hover:bg-eco-dark transition">View Profile</a>
+                    </div>
+                
+            
+                
+            
+                
+                    <div class="bg-eco-light rounded-xl shadow-lg p-8 flex flex-col items-center">
+                        <div class="w-32 h-32 rounded-full overflow-hidden mb-4">
+                            <img src="/person.png" alt="Mrs. Kavita Aggarwal" class="w-full h-full object-cover">
+                        </div>
+                        <h4 class="text-xl font-bold text-eco-dark">Mrs. Kavita Aggarwal</h4>
+                        <p class="text-eco-green mb-4">Director</p>
+                        <p class="text-gray-700 text-center mb-6">
+                            Uncovering the secrets of our planet to protect it for future generations.
+                        </p>
+                        <a href="/profiles/mrs-kavita-aggarwal.html" class="bg-eco-green text-white px-6 py-2 rounded-full hover:bg-eco-dark transition">View Profile</a>
+                    </div>
+                
+            
+        </div>
+    </div>
+</section>
+        
+            <section id="stories" class="py-20 bg-eco-light fade-in">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl md:text-4xl font-bold text-center text-eco-dark mb-4">Success Stories</h2>
+        <p class="text-xl text-gray-700 text-center mb-12 max-w-3xl mx-auto">Hear from those who've made a
+            difference with
+            EcoHeal</p>
+
+        <div class="max-w-4xl mx-auto">
+            <!-- Story Carousel -->
+            <div class="relative">
+                <div id="carousel">
+                    
+                    <div class="carousel-item bg-white rounded-xl shadow-lg p-8">
+                        <div class="flex items-center mb-6">
+                            <div class="w-16 h-16 rounded-full overflow-hidden mr-4">
+                                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" alt="Sarah Johnson" class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-eco-dark">Sarah Johnson</h4>
+                                <p class="text-eco-green">Volunteer since 2021</p>
+                            </div>
+                        </div>
+                        <blockquote class="text-gray-700 italic mb-6">
+                            <p>“Joining EcoHeal’s tree planting initiative transformed my perspective on environmental conservation. Seeing our community come together to restore the local park was incredibly rewarding. I’ve learned that small actions create big impacts.”</p>
+
+                        </blockquote>
+                        <div class="flex justify-center">
+                            <button
+                                class="bg-eco-green text-white px-4 py-2 rounded-full hover:bg-eco-dark transition">Share
+                                Your Story</button>
+                        </div>
+                    </div>
+                    
+                    <div class="carousel-item bg-white rounded-xl shadow-lg p-8">
+                        <div class="flex items-center mb-6">
+                            <div class="w-16 h-16 rounded-full overflow-hidden mr-4">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" alt="Mark Davis" class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-eco-dark">Mark Davis</h4>
+                                <p class="text-eco-green">Community Partner</p>
+                            </div>
+                        </div>
+                        <blockquote class="text-gray-700 italic mb-6">
+                            <p>“EcoHeal’s workshops on sustainable living have been a game-changer for our neighborhood. The practical tips and community support have empowered us to make a real difference in our local environment. We’re grateful for their guidance and partnership.”</p>
+
+                        </blockquote>
+                        <div class="flex justify-center">
+                            <button
+                                class="bg-eco-green text-white px-4 py-2 rounded-full hover:bg-eco-dark transition">Share
+                                Your Story</button>
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <!-- Carousel Controls -->
+                <div class="flex justify-center mt-8 space-x-4">
+                    <button id="prev-btn"
+                        class="w-10 h-10 rounded-full bg-white shadow flex items-center justify-center hover:bg-eco-green hover:text-white transition">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button id="next-btn"
+                        class="w-10 h-10 rounded-full bg-white shadow flex items-center justify-center hover:bg-eco-green hover:text-white transition">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+        
+            <section id="get-involved" class="py-20 bg-white fade-in">
+    <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+                <h2 class="text-3xl md:text-4xl font-bold text-eco-dark mb-4">Upcoming Events</h2>
+                <p class="text-xl text-gray-700 mb-8">Join our community activities and make a tangible impact</p>
+
+                <div class="space-y-6">
+                    
+                    <div class="flex p-4 border-l-4 border-eco-green bg-eco-light rounded-r-lg">
+                        <div class="mr-4 text-center">
+                            <div class="text-2xl font-bold text-eco-green">15</div>
+                            <div class="text-eco-dark font-medium">JUN</div>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-eco-dark mb-1">Coastal Cleanup Day</h3>
+                            <p class="text-gray-700 mb-2"><p>Join us at Marina Beach for our monthly cleanup drive.</p>
+</p>
+                            <span class="text-sm bg-eco-green text-white px-3 py-1 rounded-full">9:00 AM - 12:00 PM</span>
+                        </div>
+                    </div>
+                    
+                    <div class="flex p-4 border-l-4 border-eco-green bg-eco-light rounded-r-lg">
+                        <div class="mr-4 text-center">
+                            <div class="text-2xl font-bold text-eco-green">22</div>
+                            <div class="text-eco-dark font-medium">JUN</div>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-eco-dark mb-1">Tree Planting Workshop</h3>
+                            <p class="text-gray-700 mb-2"><p>Learn proper planting techniques and care for saplings.</p>
+</p>
+                            <span class="text-sm bg-eco-green text-white px-3 py-1 rounded-full">2:00 PM - 4:00 PM</span>
+                        </div>
+                    </div>
+                    
+                    <div class="flex p-4 border-l-4 border-eco-green bg-eco-light rounded-r-lg">
+                        <div class="mr-4 text-center">
+                            <div class="text-2xl font-bold text-eco-green">30</div>
+                            <div class="text-eco-dark font-medium">JUN</div>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-eco-dark mb-1">Eco-Crafting for Kids</h3>
+                            <p class="text-gray-700 mb-2"><p>Creative recycling workshop for children aged 6-12.</p>
+</p>
+                            <span class="text-sm bg-eco-green text-white px-3 py-1 rounded-full">10:00 AM - 12:00 PM</span>
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <!-- <div class="mt-8">
+                    <a href="#get-involved" class="text-eco-blue font-semibold hover:underline">View Full Calendar
+                        →</a>
+                </div> -->
+            </div>
+
+            <div class="bg-eco-light rounded-xl p-8 shadow-lg">
+                <h3 class="text-2xl font-bold text-eco-dark mb-6 text-center">Become a Volunteer</h3>
+                <form class="space-y-4">
+                    <div>
+                        <label class="block text-eco-dark mb-2">Full Name</label>
+                        <input type="text"
+                            class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-eco-green">
+                    </div>
+                    <div>
+                        <label class="block text-eco-dark mb-2">Email Address</label>
+                        <input type="email"
+                            class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-eco-green">
+                    </div>
+                    <div>
+                        <label class="block text-eco-dark mb-2">Phone Number</label>
+                        <input type="tel"
+                            class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-eco-green">
+                    </div>
+                    <div>
+                        <label class="block text-eco-dark mb-2">Areas of Interest</label>
+                        <select
+                            class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-eco-green">
+                            <option>Tree Planting</option>
+                            <option>Community Cleanup</option>
+                            <option>Education Programs</option>
+                            <option>Event Organization</option>
+                            <option>All of the above</option>
+                        </select>
+                    </div>
+                    <button type="submit"
+                        class="w-full bg-eco-green hover:bg-eco-dark text-white font-bold py-3 rounded-full transition">Join
+                        Our Team</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+        
+    </main>
+
+    <footer id="contact" class="bg-eco-dark text-white pt-16 pb-8 fade-in">
+    <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+            <!-- Contact Info -->
+            <div>
+                <h3 class="text-xl font-bold mb-4">Contact Us</h3>
+                <ul class="space-y-3">
+                    <li class="flex items-start">
+                        <i class="fas fa-map-marker-alt mt-1 mr-3 text-eco-green"></i>
+                        <span>#457, sector 45, Gurgaon - 122003 (Haryana)</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-phone mt-1 mr-3 text-eco-green"></i>
+                        <span>+1 (555) 123-4567</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-envelope mt-1 mr-3 text-eco-green"></i>
+                        <span>ecohealfoundation@gmail.com</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Quick Links -->
+            <div>
+                <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                <ul class="space-y-2">
+                    <li><a href="#home" class="hover:text-eco-green transition">Home</a></li>
+                    <li><a href="#about" class="hover:text-eco-green transition">About Us</a></li>
+                    <li><a href="#programs" class="hover:text-eco-green transition">Programs</a></li>
+                    <li><a href="#donate" class="hover:text-eco-green transition">Donate</a></li>
+                    <li><a href="#get-involved" class="hover:text-eco-green transition">Get Involved</a></li>
+                </ul>
+            </div>
+
+            <!-- Social Media -->
+            <div>
+                <h3 class="text-xl font-bold mb-4">Connect With Us</h3>
+                <div class="flex space-x-4 mb-6">
+                    <a href="#"
+                        class="w-10 h-10 rounded-full bg-eco-green flex items-center justify-center hover:bg-white hover:text-eco-green transition">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#"
+                        class="w-10 h-10 rounded-full bg-eco-green flex items-center justify-center hover:bg-white hover:text-eco-green transition">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#"
+                        class="w-10 h-10 rounded-full bg-eco-green flex items-center justify-center hover:bg-white hover:text-eco-green transition">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#"
+                        class="w-10 h-10 rounded-full bg-eco-green flex items-center justify-center hover:bg-white hover:text-eco-green transition">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+                <p class="text-gray-300">Follow our journey and stay updated on our initiatives</p>
+            </div>
+
+            <!-- Newsletter -->
+            <div>
+                <h3 class="text-xl font-bold mb-4">Stay Informed</h3>
+                <p class="mb-4 text-gray-300">Subscribe to our newsletter for updates on our programs and events</p>
+                <form class="flex">
+                    <input type="email" placeholder="Your email"
+                        class="px-4 py-2 w-full rounded-l-lg focus:outline-none text-gray-800">
+                    <button type="submit"
+                        class="bg-eco-green hover:bg-eco-light text-white hover:text-eco-green px-4 rounded-r-lg transition">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <div class="border-t border-gray-700 pt-8 text-center text-gray-400">
+            <p>&copy; 2023 EcoHeal Foundation. All rights reserved.</p>
+            <p class="mt-2">Building a greener planet and sustainable future</p>
+        </div>
+    </div>
+</footer>
+
+    <script>
+    // Mobile Menu Toggle
+    document.getElementById('mobile-menu-button').addEventListener('click', function () {
+        const menu = document.getElementById('mobile-menu');
+        menu.classList.toggle('hidden');
+    });
+
+    // Carousel functionality
+    const carousel = document.getElementById('carousel');
+    const carouselItems = carousel.querySelectorAll('.carousel-item');
+    let currentItem = 0;
+
+    function showItem(index) {
+        carouselItems.forEach((item, i) => {
+            item.style.display = i === index ? 'block' : 'none';
+        });
+    }
+
+    document.getElementById('next-btn').addEventListener('click', function () {
+        currentItem = (currentItem + 1) % carouselItems.length;
+        showItem(currentItem);
+    });
+
+    document.getElementById('prev-btn').addEventListener('click', function () {
+        currentItem = (currentItem - 1 + carouselItems.length) % carouselItems.length;
+        showItem(currentItem);
+    });
+
+    // Initialize carousel
+    showItem(currentItem);
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                window.scrollTo({
+                    top: target.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // Add fade-in animation when elements come into view
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('fade-in');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('section').forEach(section => {
+        observer.observe(section);
+    });
+</script>
+
+</body>
+
+</html>

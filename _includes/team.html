@@ -1,0 +1,24 @@
+<section id="team" class="py-20 bg-white fade-in">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl md:text-4xl font-bold text-center text-eco-dark mb-4">Meet Our Team</h2>
+        <p class="text-xl text-gray-700 text-center mb-12 max-w-3xl mx-auto">The dedicated individuals leading EcoHeal's mission</p>
+
+        <div class="flex flex-wrap justify-center gap-8">
+            {% for page in site.pages %}
+                {% if page.path contains 'profiles/' %}
+                    <div class="bg-eco-light rounded-xl shadow-lg p-8 flex flex-col items-center">
+                        <div class="w-32 h-32 rounded-full overflow-hidden mb-4">
+                            <img src="{{ page.image }}" alt="{{ page.title }}" class="w-full h-full object-cover">
+                        </div>
+                        <h4 class="text-xl font-bold text-eco-dark">{{ page.title }}</h4>
+                        <p class="text-eco-green mb-4">{{ page.role }}</p>
+                        <p class="text-gray-700 text-center mb-6">
+                            {{ page.tagline }}
+                        </p>
+                        <a href="{{ page.url }}" class="bg-eco-green text-white px-6 py-2 rounded-full hover:bg-eco-dark transition">View Profile</a>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</section>

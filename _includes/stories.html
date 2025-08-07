@@ -1,0 +1,49 @@
+<section id="stories" class="py-20 bg-eco-light fade-in">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl md:text-4xl font-bold text-center text-eco-dark mb-4">Success Stories</h2>
+        <p class="text-xl text-gray-700 text-center mb-12 max-w-3xl mx-auto">Hear from those who've made a
+            difference with
+            EcoHeal</p>
+
+        <div class="max-w-4xl mx-auto">
+            <!-- Story Carousel -->
+            <div class="relative">
+                <div id="carousel">
+                    {% for story in site.stories %}
+                    <div class="carousel-item bg-white rounded-xl shadow-lg p-8">
+                        <div class="flex items-center mb-6">
+                            <div class="w-16 h-16 rounded-full overflow-hidden mr-4">
+                                <img src="{{ story.image }}" alt="{{ story.name }}" class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-eco-dark">{{ story.name }}</h4>
+                                <p class="text-eco-green">{{ story.role }}</p>
+                            </div>
+                        </div>
+                        <blockquote class="text-gray-700 italic mb-6">
+                            {{ story.content | markdownify }}
+                        </blockquote>
+                        <div class="flex justify-center">
+                            <button
+                                class="bg-eco-green text-white px-4 py-2 rounded-full hover:bg-eco-dark transition">Share
+                                Your Story</button>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+
+                <!-- Carousel Controls -->
+                <div class="flex justify-center mt-8 space-x-4">
+                    <button id="prev-btn"
+                        class="w-10 h-10 rounded-full bg-white shadow flex items-center justify-center hover:bg-eco-green hover:text-white transition">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button id="next-btn"
+                        class="w-10 h-10 rounded-full bg-white shadow flex items-center justify-center hover:bg-eco-green hover:text-white transition">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
