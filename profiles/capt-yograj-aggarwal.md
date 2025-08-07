@@ -7,11 +7,11 @@ image: "person.png"
 
 projects:
   - name: "Project 1"
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    description: ""
   - name: "Project 2"
-    description: "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    description: ""
   - name: "Project 3"
-    description: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+    description: ""
 
 achievements:
   - "2023 Maritime Leader Award - International Maritime Organization"

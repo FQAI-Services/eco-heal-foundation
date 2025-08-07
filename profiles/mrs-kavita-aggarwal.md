@@ -7,7 +7,11 @@ image: "person.png"
 
 projects:
   - name: "Project 1"
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    description: ""
+  - name: "Project 2"
+    description: ""
+  - name: "Project 3"
+    description: ""
 
 achievements:
   - "2023 Community Service Award - Local Government"

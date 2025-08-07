@@ -11,11 +11,11 @@
                     </li>
                     <li class="flex items-start">
                         <i class="fas fa-phone mt-1 mr-3 text-eco-green"></i>
-                        <span>+1 (555) 123-4567</span>
+                        <span>{{ site.phone }}</span>
                     </li>
                     <li class="flex items-start">
                         <i class="fas fa-envelope mt-1 mr-3 text-eco-green"></i>
-                        <span>{{ site.email }}</span>
+                        <span><a href="mailto:{{ site.email }}">{{ site.email }}</a></span>
                     </li>
                 </ul>
             </div>
