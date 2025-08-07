@@ -3,7 +3,7 @@ layout: profile
 title: Capt. Yograj Aggarwal
 role: Executive Director
 tagline: "Leading the charge for a sustainable future, one community at a time."
-image: "/person.png"
+image: "person.png"
 
 projects:
   - name: "Project 1"
