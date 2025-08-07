@@ -3,7 +3,7 @@ layout: profile
 title: Mrs. Kavita Aggarwal
 role: Director
 tagline: "Uncovering the secrets of our planet to protect it for future generations."
-image: "/person.png"
+image: "person.png"
 
 projects:
   - name: "Project 1"
