@@ -1,22 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+  {% include head.html %}
 
-{% include head.html %}
-
-<body class="bg-eco-light">
-
+  <body class="bg-eco-light">
     {% include header.html %}
 
     <main>
-        {% for section in page.sections %}
-            {% include {{ section }} %}
-        {% endfor %}
+      {% for section in page.sections %} {% include {{ section }} %} {% endfor
+      %}
     </main>
 
-    {% include footer.html %}
+    {% include footer.html %} {% include scripts.html %}
+  </body>
+  <!-- Google tag (gtag.js) -->
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=AW-929273300"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
 
-    {% include scripts.html %}
-
-</body>
-
+    gtag("config", "AW-929273300");
+  </script>
 </html>
