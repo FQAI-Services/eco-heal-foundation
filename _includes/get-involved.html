@@ -1,66 +1,63 @@
 <section id="get-involved" class="py-20 bg-white fade-in">
-    <div class="container mx-auto px-4">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+  <div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <h2 class="text-3xl md:text-4xl font-bold text-eco-dark mb-4">
+          Upcoming Events
+        </h2>
+        <p class="text-xl text-gray-700 mb-8">
+          Join our community activities and make a tangible impact
+        </p>
+
+        <div class="space-y-6">
+          {% for event in site.events %}
+          <div
+            class="flex p-4 border-l-4 border-eco-green bg-eco-light rounded-r-lg"
+          >
+            <div class="mr-4 text-center">
+              <div class="text-2xl font-bold text-eco-green">
+                {{ event.date | date: "%d" }}
+              </div>
+              <div class="text-eco-dark font-medium">
+                {{ event.date | date: "%b" | upcase }}
+              </div>
+            </div>
             <div>
-                <h2 class="text-3xl md:text-4xl font-bold text-eco-dark mb-4">Upcoming Events</h2>
-                <p class="text-xl text-gray-700 mb-8">Join our community activities and make a tangible impact</p>
+              <h3 class="text-xl font-bold text-eco-dark mb-1">
+                {{ event.title }}
+              </h3>
+              <p class="text-gray-700 mb-2">
+                {{ event.content | markdownify }}
+              </p>
+              <span
+                class="text-sm bg-eco-green text-white px-3 py-1 rounded-full"
+                >{{ event.time }}</span
+              >
+            </div>
+          </div>
+          {% endfor %}
+        </div>
 
-                <div class="space-y-6">
-                    {% for event in site.events %}
-                    <div class="flex p-4 border-l-4 border-eco-green bg-eco-light rounded-r-lg">
-                        <div class="mr-4 text-center">
-                            <div class="text-2xl font-bold text-eco-green">{{ event.date | date: "%d" }}</div>
-                            <div class="text-eco-dark font-medium">{{ event.date | date: "%b" | upcase }}</div>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-bold text-eco-dark mb-1">{{ event.title }}</h3>
-                            <p class="text-gray-700 mb-2">{{ event.content | markdownify }}</p>
-                            <span class="text-sm bg-eco-green text-white px-3 py-1 rounded-full">{{ event.time }}</span>
-                        </div>
-                    </div>
-                    {% endfor %}
-                </div>
-
-                <!-- <div class="mt-8">
+        <!-- <div class="mt-8">
                     <a href="#get-involved" class="text-eco-blue font-semibold hover:underline">View Full Calendar
                         →</a>
                 </div> -->
-            </div>
+      </div>
 
-            <div class="bg-eco-light rounded-xl p-8 shadow-lg">
-                <h3 class="text-2xl font-bold text-eco-dark mb-6 text-center">Become a Volunteer</h3>
-                <form class="space-y-4">
-                    <div>
-                        <label class="block text-eco-dark mb-2">Full Name</label>
-                        <input type="text"
-                            class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-eco-green">
-                    </div>
-                    <div>
-                        <label class="block text-eco-dark mb-2">Email Address</label>
-                        <input type="email"
-                            class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-eco-green">
-                    </div>
-                    <div>
-                        <label class="block text-eco-dark mb-2">Phone Number</label>
-                        <input type="tel"
-                            class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-eco-green">
-                    </div>
-                    <div>
-                        <label class="block text-eco-dark mb-2">Areas of Interest</label>
-                        <select
-                            class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-eco-green">
-                            <option>Tree Planting</option>
-                            <option>Community Cleanup</option>
-                            <option>Education Programs</option>
-                            <option>Event Organization</option>
-                            <option>All of the above</option>
-                        </select>
-                    </div>
-                    <button type="submit"
-                        class="w-full bg-eco-green hover:bg-eco-dark text-white font-bold py-3 rounded-full transition">Join
-                        Our Team</button>
-                </form>
-            </div>
-        </div>
+      <div class="bg-eco-light rounded-xl p-8 shadow-lg">
+        <h3 class="text-2xl font-bold text-eco-dark mb-6 text-center">
+          Become a Volunteer
+        </h3>
+        <iframe
+          src="https://docs.google.com/forms/d/e/1FAIpQLSef6G80UKy2jbsBGCY59EKTRZ7SeapWlDtbqD8a2m_OSzGCLg/viewform?embedded=true"
+          width="640"
+          height="640"
+          frameborder="0"
+          marginheight="0"
+          marginwidth="0"
+          >Loading…</iframe
+        >
+      </div>
     </div>
+  </div>
 </section>
